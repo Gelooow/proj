@@ -5,18 +5,24 @@ import LoginForm1 from './LoginForm1';
 export default class Login extends Component{
     render() {
         return(
+             < Image source = {require('./LogIn.jpg')} style ={styles.BgImage}>
              <KeyboardAvoidingView behavior="padding" style={styles.container}>
+                 
                    <View style={styles.logoContainer} >
                        <Image
                        style={styles.logo} 
                        source={require('./logo.png')}
                        />
                        <Text style={styles.title}>iSurvive</Text>
-                   </View>
-                   <View style={styles.formContainer}>
+                       <View style={styles.formContainer}>
                     <LoginForm1 />
                    </View>
+                   </View>
+                   
+                 
                 </KeyboardAvoidingView>
+                  </Image>
+                
              );
     }
 }
@@ -24,12 +30,14 @@ export default class Login extends Component{
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#27ae60'
+
     },
     logoContainer:{
         alignItems: 'center',
         flexGrow: 1,
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginRight: 450,
+        marginBottom:600
     },
     logo: {
         width: 200,
@@ -43,6 +51,15 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         opacity: 0.9,
         fontSize: 40,
-        fontFamily: 'serif'
+        fontFamily: 'normal',
+
+        
+    },
+    formContainer:{
+        marginTop: 50,
+        marginRight: 40,
+        marginLeft: 30
     }
+    
+    
 });

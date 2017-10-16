@@ -5,46 +5,51 @@ import SignUpForm from './SignUpForm';
 export default class SignUp extends Component{
     render() {
         return(
-             <KeyboardAvoidingView behavior="padding" style={styles.container}>
+            < Image source = {require('./SignUp.png')} style ={styles.BgImage}>
+            <KeyboardAvoidingView behavior="padding" style={styles.container}>
+                
                    <View style={styles.logoContainer} >
-                       <Image
+                      <Image
                        style={styles.logo} 
-                       source={require('./logo.png')}
+                       source={require('./logo2.png')}
                        />
-                       <Text style={styles.title}>iSurvive</Text>
-                   </View>
                    <View style={styles.formContainer}>
+                       
                     <SignUpForm />
                    </View>
+                   </View>
+                   
+
+
+
                 </KeyboardAvoidingView>
+                    </Image>
+
              );
     }
 }
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: '#27ae60'
+   flex: 1
 
-
-    },
+  },
     logoContainer:{
         alignItems: 'center',
         flexGrow: 1,
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginRight: 440,
+        marginTop:200
     },
     logo: {
-        width: 100,
+        width: 200,
         height: 100
         
     },
-    title:{
-        color: '#FFFFFF',
-        marginTop: 10,
-        width: 160,
-        textAlign: 'center',
-        opacity: 0.9,
-        fontSize: 40,
-        fontFamily: 'serif'
+       
+   formContainer:{
+        marginTop: 50,
+        marginRight: 50,
+        marginLeft: 30
     }
 });

@@ -1,7 +1,20 @@
 import React, { Component } from 'react';
 import { ToastAndroid, StyleSheet, View, TextInput, TouchableOpacity, Text, StatusBar } from 'react-native';
 
+
 export default class LoginForm1 extends Component{
+
+    onButtonPress(){
+        this.props.navigator.push({
+            id: "Home"
+        }
+
+        );
+
+    }
+
+
+
     render() {
         return(
                 <View stylez={styles.container}>
@@ -9,8 +22,8 @@ export default class LoginForm1 extends Component{
                     barStyle="light-content"
                     />
                     <TextInput
-                    placeholder="username or email"
-                    placeholderTextColor="rgba(255,255,255,0.7)"
+                    placeholder="username"
+                    placeholderTextColor="silver"
                     returnKeyType="next"
                     onSubmitEditing={() => this.passwordInput.focus()}
                     keyboardType="email-address"
@@ -20,7 +33,7 @@ export default class LoginForm1 extends Component{
                     />
                     <TextInput
                     placeholder="password"
-                    placeholderTextColor="rgba(255,255,255,0.7)"
+                    placeholderTextColor="silver"
                     returnKeyType="go"
                     secureTextEntry
                     style={styles.input}
@@ -31,11 +44,12 @@ export default class LoginForm1 extends Component{
                         <Text style={styles.buttonText}>LOGIN</Text>
                     </TouchableOpacity>
 
-                     <Text 
-                     
-                     style={styles.Signup} >
-                        No Account? Sign up here.
-                    </Text>
+                     <TouchableOpacity onPress = {this.onButtonPress.bint(this)}>
+                     <Text style={styles.Signup}>No Account? Sign up here.</Text>
+                     </TouchableOpacity>
+                     <TouchableOpacity>
+                    <Text style = {styles.Signup1}>Forgot your Password? </Text>
+                    </TouchableOpacity>
                 </View>
         );
     }
@@ -47,32 +61,52 @@ const styles = StyleSheet.create({
     },
     input:{
         height: 40,
-        backgroundColor: 'rgba(255,255,255,0.2)',
+        backgroundColor: 'white',
         marginBottom: 10,
-        color: '#FFFFFF',
-        paddingHorizontal: 10
+        paddingHorizontal: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: 320,
+         marginLeft: 20,
+
+        padding:10, 
+        height:45, 
+        overflow:'hidden',
+        borderRadius: 7,
+        
     },
     Signup:{
-        height: 40,
-        marginBottom: 10,
-        color: '#FFFFFF',
+       
+        color: 'lightgreen',
         paddingHorizontal: 10,
         alignItems: 'center',
-        flexGrow: 1,
-        justifyContent: 'center',
-        marginLeft: 90,
-        marginTop: 10
+        marginLeft: 10,
+      
 
     },
+    Signup1:{
+        color: 'lightgreen',
+        paddingHorizontal: 10,
+        marginLeft: 10,
+        marginTop: 5
+     
+    },
     buttonContainer:{
-        backgroundColor: 'yellowgreen',
+        backgroundColor: 'black',
         paddingVertical: 15,
+         width: 320,
+         marginLeft: 20,
+         padding:10, 
+        height:45, 
+        overflow:'hidden',
+        borderRadius: 20
         
     },
     buttonText:{
         textAlign: 'center',
         color: '#FFFFFF',
         fontWeight: '700',
+        
 
 
     }
